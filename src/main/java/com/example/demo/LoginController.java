@@ -11,6 +11,12 @@ public class LoginController {
     @Autowired
     private UserRepository repo;
 
+    // ✅ New: Handle root URL
+    @GetMapping("/")
+    public String home() {
+        return "redirect:/login";  // Redirect to the login page
+    }
+
     // Show the login form page
     @GetMapping("/login")
     public String showLoginPage() {
